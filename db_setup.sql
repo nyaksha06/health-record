@@ -53,12 +53,12 @@ CREATE TABLE Appointments (
     DoctorID INT NOT NULL,
     AppointmentDateTime DATETIME NOT NULL,
     Status ENUM('Scheduled', 'Completed', 'Cancelled') DEFAULT 'Scheduled',
-    BillID INT,
+    
     CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     UpdatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (PatientID) REFERENCES Patients(PatientID) ON DELETE CASCADE,
     FOREIGN KEY (DoctorID) REFERENCES Doctors(DoctorID) ON DELETE CASCADE,
-    FOREIGN KEY (BillID) REFERENCES Billing(BillID) ON DELETE SET NULL
+   
 );
 
 -- Billing Table (Revised)
